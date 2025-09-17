@@ -1,5 +1,6 @@
 import './App.css'
 import { Navbar } from './components/navbar';
+import { LandingMain } from './components/landingMain';
 
 function App() {
 
@@ -11,12 +12,10 @@ function App() {
   ];
 
   return (
-    <>
+    <div>
       <Navbar navLinks={navLinks} />
-      <div className="flex flex-row gap-1">
-
-      </div>
-    </>
+      <LandingMain />
+    </div>
   )
 }
 
