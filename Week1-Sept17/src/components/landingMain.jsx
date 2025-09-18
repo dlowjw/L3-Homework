@@ -26,7 +26,7 @@ export const LandingMain = () => {
           src={"https://images.pexels.com/photos/24876032/pexels-photo-24876032.jpeg"}
           className="w-50" />
         <div className="flex flex-row absolute top-120 gap-1">
-          <button key="explore" id="explore" className="bg-black text-4xl">Explore</button>
+          <button key="explore" id="explore" className="bg-black text-4xl text-white">Explore</button>
           <button key="pin" id="pin" className="bg-yellow-200 text-4xl">🥖</button>
         </div>
         
