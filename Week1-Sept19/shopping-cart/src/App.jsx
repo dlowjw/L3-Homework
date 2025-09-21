@@ -14,7 +14,7 @@ Homework:
 import { useState } from 'react'
 import './App.css'
 import { Header } from './components/header'
-// import { Cart } from './components/cart'
+import { Cart } from './components/cart'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -23,6 +23,7 @@ function App() {
     <>
       <div className="">
         <Header />
+        <Cart />
       </div>
     </>
   )
