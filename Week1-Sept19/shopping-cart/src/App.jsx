@@ -15,6 +15,7 @@ import { useState } from 'react'
 import './App.css'
 import { Header } from './components/header'
 import { Cart } from './components/cart'
+import { Total } from './components/total'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -23,7 +24,10 @@ function App() {
     <>
       <div className="">
         <Header />
-        <Cart />
+        <div className='flex flex-row'>
+          <Cart />
+          <Total />
+        </div>
       </div>
     </>
   )
