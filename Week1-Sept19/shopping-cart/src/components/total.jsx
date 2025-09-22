@@ -3,7 +3,7 @@ import React from "react";
 export const Total = () => {
   return (
     <div>
-      <div>
+      <div className="flex flex-col gap-1">
         <div className="flex justify-between">
           <h1>Subtotal</h1>
           <h1>$15</h1>
@@ -20,6 +20,7 @@ export const Total = () => {
           <label htmlFor="notes">Order Notes</label>
           <input type="text" id="notes" name="notes" className="border-1 border-solid border-black"/>
         </div>
+        <button type="button" className="cursor-pointer text-white bg-black">Submit Order</button>
       </div>
     </div>
   )

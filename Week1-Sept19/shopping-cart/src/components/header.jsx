@@ -8,6 +8,7 @@ export const Header = () => {
       <p className="text-3xl">You are eligible for free shipping </p>
       <br />
       <hr />
+      <br />
     </div>
   )
 }
