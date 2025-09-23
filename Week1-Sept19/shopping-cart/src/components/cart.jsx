@@ -1,14 +1,17 @@
 import React from "react";
+import { useState } from 'react'
 
-const setPrice = (event, index) => {
-  console.log(event.target.value);
-  return event.target.value;
-}
+// const setPrice = (event, index) => {
+//   console.log(event.target.value);
+//   return event.target.value;
+// }
 
 const setItemValue = () => {
   // inputValue * itemCost 
   // return
 }
+
+const [price, setPrice] = useState(1);
 
 export const Cart = ({cartItems}) => {
   return (

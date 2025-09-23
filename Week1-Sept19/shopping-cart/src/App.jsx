@@ -11,6 +11,7 @@ Homework:
 - note you can chain those methods inside of the jsx as well, in our class example we do it outside
 
 TODO:
+- useState to update cart
 - Filter: filtering for specific items
 - Reduce: to add the cart total
 */
