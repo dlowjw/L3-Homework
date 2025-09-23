@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Total = () => {
+export const Total = ({cartItems}, i) => {
   return (
     <div>
       <div className="flex flex-col gap-1">
