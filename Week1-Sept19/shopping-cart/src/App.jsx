@@ -12,13 +12,11 @@ Homework:
 
 TODO:
 - Filter: filtering for specific items
-- Reduce: to add the cart total
 */
 
 import './App.css'
 import { Header } from './components/header'
 import { Cart } from './components/cart'
-import { Total } from './components/total'
 
 function App() {
   let cartItems = [
@@ -27,14 +25,19 @@ function App() {
     { id: 3, thumbnail: "https://www.genkithings.com/cdn/shop/files/Frame1400006069.webp?v=1756453613&width=96", itemName: "Power Bank", itemCost: 115, quantity: 1 },
   ];
 
+  const calculateTotal = () => {
+    // console.log("calculating Total");
+    
+    const sum = cartItems.reduce((acc, item) => acc + item.itemCost * item.quantity, 0);
+    // console.log(sum);    
+    return sum;
+  }
+
   return (
     <>
       <div className="">
         <Header />
-        <div className='flex justify-between'>
-          <Cart cartItems={cartItems} />
-          <Total cartItems={cartItems} />
-        </div>
+        <Cart cartItems={cartItems} />
       </div>
     </>
   )

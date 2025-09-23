@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from 'react'
+import { Total } from '../components/total'
 
 export const Cart = ({cartItems}, i) => {
   const [items, setItems] = useState(cartItems);
@@ -28,40 +29,47 @@ export const Cart = ({cartItems}, i) => {
     setItems(updatedItems);
   }
 
-  return (
-    <div>
-      <table className="table-fixed w-full">
-        <thead>
-          <tr className="">
-            <th>Product</th>
-            <th>Quantity</th>
-            <th>Total</th>
-          </tr>
-        </thead>
-        <tbody>
-        {/* Mapping Cart items from data */}
-        {cartItems.map(({id, thumbnail, itemName, itemCost, quantity}, index) => {  
+  const calculateTotal = (items) => {
+    const sum = items.reduce((acc, item) => acc + item.itemCost * item.quantity, 0);
+    return sum;
+  }
 
-          return(
-          <>
-          <tr className="gap-x-10">
-            <td>
-              <div className="flex flex-col">
-                <img src={thumbnail} className="self-center" />
-                <h1>{itemName}</h1>
-              </div>
-            </td>
-            <td><input type="number" name="quantity" defaultValue={quantity} min="0" 
-                  onChange={(event) => setPrice(event, items, index)} 
-                  className="border-1 border-solid border-black"></input></td>
-            <td>${itemCost * quantity}</td> 
-          </tr>
-          </>)
-        })}
-        </tbody>
-      </table>
+  return (
+    <div className='flex justify-between'>
+      <div>
+        <table className="table-fixed w-full">
+          <thead>
+            <tr className="">
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+          {/* Mapping Cart items from data */}
+          {cartItems.map(({id, thumbnail, itemName, itemCost, quantity}, index) => {  
+
+            return(
+            <>
+            <tr className="gap-x-10">
+              <td>
+                <div className="flex flex-col">
+                  <img src={thumbnail} className="self-center" />
+                  <h1>{itemName}</h1>
+                </div>
+              </td>
+              <td><input type="number" name="quantity" defaultValue={quantity} min="0" 
+                    onChange={(event) => setPrice(event, items, index)} 
+                    className="border-1 border-solid border-black"></input></td>
+              <td>${itemCost * quantity}</td> 
+            </tr>
+            </>)
+          })}
+          </tbody>
+        </table>
+      </div>
+      <Total totalPrice={calculateTotal(cartItems)} />
     </div>
-    
   )
 }
 
