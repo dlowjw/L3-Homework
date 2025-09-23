@@ -1,14 +1,14 @@
 import React from "react";
 
 // Shipping Price is just placeholder 
-export const Total = (totalPrice) => {
-  {console.log(totalPrice.totalPrice);}
+export const Total = ({totalPrice}) => {
+  console.log(totalPrice);
   return (
     <div>
       <div className="flex flex-col gap-1">
         <div className="flex justify-between">
           <h1>Subtotal</h1>
-          <h1>${totalPrice.totalPrice}</h1>
+          <h1>${totalPrice}</h1>
         </div>
         <div className="flex justify-between">
           <h1>Shipping</h1>
@@ -16,7 +16,7 @@ export const Total = (totalPrice) => {
         </div>
         <div className="flex justify-between">
           <h1>Total</h1>
-          <h1>${totalPrice.totalPrice}</h1>
+          <h1>${totalPrice}</h1>
         </div>
         <div className="flex gap-5">
           <label htmlFor="notes">Order Notes</label>

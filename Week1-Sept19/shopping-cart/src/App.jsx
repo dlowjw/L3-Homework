@@ -19,25 +19,18 @@ import { Header } from './components/header'
 import { Cart } from './components/cart'
 
 function App() {
-  let cartItems = [
-    { id: 1, thumbnail: "https://www.genkithings.com/cdn/shop/files/29.png?v=1756453538&width=96", itemName: "Long Sling Bag", itemCost: 160, quantity: 1 },
-    { id: 2, thumbnail: "https://www.genkithings.com/cdn/shop/files/kickstand-asset-1.jpg?v=1713409973&width=96", itemName: "Kickstand", itemCost: 15, quantity: 1 },
-    { id: 3, thumbnail: "https://www.genkithings.com/cdn/shop/files/Frame1400006069.webp?v=1756453613&width=96", itemName: "Power Bank", itemCost: 115, quantity: 1 },
-  ];
-
-  const calculateTotal = () => {
-    // console.log("calculating Total");
-    
-    const sum = cartItems.reduce((acc, item) => acc + item.itemCost * item.quantity, 0);
-    // console.log(sum);    
-    return sum;
-  }
+  
+const cartItems = [
+  { id: 1, thumbnail: "https://www.genkithings.com/cdn/shop/files/29.png?v=1756453538&width=96", itemName: "Long Sling Bag", itemCost: 160, quantity: 1 },
+  { id: 2, thumbnail: "https://www.genkithings.com/cdn/shop/files/kickstand-asset-1.jpg?v=1713409973&width=96", itemName: "Kickstand", itemCost: 15, quantity: 1 },
+  { id: 3, thumbnail: "https://www.genkithings.com/cdn/shop/files/Frame1400006069.webp?v=1756453613&width=96", itemName: "Power Bank", itemCost: 115, quantity: 1 },
+];
 
   return (
     <>
       <div className="">
         <Header />
-        <Cart cartItems={cartItems} />
+        <Cart cartItems={cartItems}/>
       </div>
     </>
   )
