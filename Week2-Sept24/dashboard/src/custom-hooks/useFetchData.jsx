@@ -8,7 +8,7 @@ const useFetchData = () => {
   async function getData(url, key) {
     try {
       const options = {
-        header: {
+        headers: {
           "x-api-key": key,
           "Content-Type": "application.json",
         },
