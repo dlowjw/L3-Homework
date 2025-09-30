@@ -4,7 +4,7 @@ import './App.css'
 
 /**
  * Build a dashboard - due on Thursday
- * - Components, API Request
+ * - Components, API Request (Done)
  * - useState, useEffect
  * - map -> map recipe data 
  * - filter -> by diet
