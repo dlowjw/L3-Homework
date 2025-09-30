@@ -1,6 +1,20 @@
 import React from "react";
+// import useFetchData from "../custom-hooks/useFetchData";
+// import { useState, useEffect } from 'react'
 
-export const Filter = () => {
+const url = "https://api.spoonacular.com/recipes/complexSearch?diet=ketogenic&addRecipeNutrition=true&number=3";
+const key = "cc0e5594b35e41b3b74872e2971cf192";
+
+export const Filter = ({getData}) => {
+  // const [data, error, getData] = useFetchData();
+  // const [recipes, setRecipes] = useState();
+
+  // useEffect(() => {
+  //   setRecipes(data);
+  //   console.log(data);
+  //   console.log(recipes);
+  // }, [data]);
+
   return (
     <div className="w-3/5 flex justify-evenly">
       <div>

@@ -1,6 +1,6 @@
-import { useState } from 'react'
-import useFetchData from "./custom-hooks/useFetchData";
 import './App.css'
+import useFetchData from "./custom-hooks/useFetchData";
+
 
 /**
  * Build a dashboard - due on Thursday
@@ -16,24 +16,28 @@ import { Header } from './components/header'
 import { CardSpace } from './components/cardSpace'
 import { Breakdown } from './components/breakdown'
 import { Filter } from './components/filter'
-const url = "https://api.spoonacular.com/recipes/complexSearch?diet=ketogenic&addRecipeNutrition=true";
-const key = "cc0e5594b35e41b3b74872e2971cf192";
+
+import { useState, useEffect } from 'react'
 
 function App() {
   const [data, error, getData] = useFetchData();
+  // const [recipes, setRecipes] = useState();
+
+  // useEffect(() => {
+  //   setRecipes(data);
+  //   console.log(data);
+  //   console.log(recipes);
+  // }, [data]);
 
   return (
     <>
       <div className="flex flex-col items-center">
         <Header />
-        <CardSpace />
+        <CardSpace data={data}/>
         <div className="flex justify-between w-4/5">
           <Breakdown />
-          <Filter />
+          <Filter getData={getData}/>
         </div>
-        {/* <div >
-          <button onClick={() => getData(url, key)}>Get Recipe</button>
-        </div> */}
       </div>
     </>
   )
