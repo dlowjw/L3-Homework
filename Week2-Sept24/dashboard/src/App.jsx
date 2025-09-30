@@ -13,6 +13,7 @@ import './App.css'
 
 // const url = "https://api.spoonacular.com/recipes/random";
 import { Header } from './components/header'
+import { CardSpace } from './components/cardSpace'
 const url = "https://api.spoonacular.com/recipes/complexSearch?diet=ketogenic&addRecipeNutrition=true";
 const key = "cc0e5594b35e41b3b74872e2971cf192";
 
@@ -21,10 +22,12 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className="flex flex-col items-center">
         <Header />
-        <button onClick={() => getData(url, key)}>Get Recipe</button>
-        {/* <button onClick={() => getData("https://randomuser.me/api/", null)}>Get User</button> */}
+        <CardSpace />
+        <div >
+          <button onClick={() => getData(url, key)}>Get Recipe</button>
+        </div>
       </div>
     </>
   )
