@@ -21,13 +21,19 @@ import { useState, useEffect } from 'react'
 
 function App() {
   const [data, error, getData] = useFetchData();
-  // const [recipes, setRecipes] = useState();
+  const [finalBreakdown, setBreakdown] = useState({calories: 0, carbs: 0, fat: 0, protein: 0});
 
-  // useEffect(() => {
-  //   setRecipes(data);
-  //   console.log(data);
-  //   console.log(recipes);
-  // }, [data]);
+  useEffect(() => {
+    if (data) {
+      let calories = data.results.reduce((acc, recipe) => acc + recipe.nutrition.nutrients[0].amount, 0,);
+      let carbs = data.results.reduce((acc, recipe) => acc + recipe.nutrition.nutrients[0].amount * recipe.nutrition.caloricBreakdown.percentCarbs / 100, 0,);
+      let fat = data.results.reduce((acc, recipe) => acc + recipe.nutrition.nutrients[0].amount * recipe.nutrition.caloricBreakdown.percentFat / 100, 0,);
+      let protein = data.results.reduce((acc, recipe) => acc + recipe.nutrition.nutrients[0].amount * recipe.nutrition.caloricBreakdown.percentProtein / 100, 0,);
+      
+      console.log("Calories Total: " + calories);
+      setBreakdown({calories: calories, carbs: carbs, fat: fat, protein: protein});
+    }    
+  }, [data]);
 
   return (
     <>
@@ -35,7 +41,7 @@ function App() {
         <Header />
         <CardSpace data={data}/>
         <div className="flex justify-between w-4/5">
-          <Breakdown />
+          <Breakdown finalBreakdown={finalBreakdown} />
           <Filter getData={getData}/>
         </div>
       </div>
