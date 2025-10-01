@@ -1,7 +1,6 @@
 import React from "react";
 
 export const Card = ({recipe}) => {
-  {console.log(recipe);}
   return (
     <div className="w-1/4 flex flex-col items-center gap-5">
       <h1>{recipe.title}</h1>
