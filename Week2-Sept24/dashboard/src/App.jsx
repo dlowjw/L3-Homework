@@ -9,6 +9,7 @@ import useFetchData from "./custom-hooks/useFetchData";
  * - map -> map recipe data (Done)
  * - filter -> by diet
  * - reduce -> total calorie / nutrition data (Done)
+ * 
  */
 
 // const url = "https://api.spoonacular.com/recipes/random";
